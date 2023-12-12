@@ -1,0 +1,15 @@
+<!-- 
+<p>{{formulario.value | json}}</p>
+
+<p *ngIf="formulario.get('email')?.hasError('required')"
+    >O e-mail precisa ser válido</p>
+
+<p
+ *ngIf="formulario.get('email')?.hasError('email')"
+    >O e-mail precisa ser válido</p> -->
+
+<form class="col-10 mx-auto" [formGroup]="formulario" (submit)="autenticar()">
+  <input class="form-control" type="email" formControlName="email" required placeholder="Informe seu e-mail">
+  <input class="form-control" type="password" formControlName="senha"  placeholder="Senha" class="form-control">
+  <input class="form-control" class="btn btn-primary" type="submit" value="Entrar" [disabled]="formulario.invalid">
+</form>
